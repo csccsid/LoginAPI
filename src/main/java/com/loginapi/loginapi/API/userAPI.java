@@ -20,8 +20,8 @@ public class userAPI
     private UserMapper UserMapper;
 
     //注册
-    @RequestMapping(value="sign", method = RequestMethod.POST)
-    public jsonpack sign(@RequestBody user user)
+    @RequestMapping(value="register", method = RequestMethod.POST)
+    public jsonpack register(@RequestBody user user)
     {
         //System.out.println(user.getAccount()+"    "+user.getPassword());
         try
@@ -38,10 +38,10 @@ public class userAPI
     }
 
     //登录
-    @RequestMapping(value = "login", method = RequestMethod.POST)
+    @RequestMapping(value = "sign", method = RequestMethod.POST)
     //允许跨域
     @CrossOrigin(originPatterns = "*", methods = {RequestMethod.GET, RequestMethod.POST})
-    public jsonpack login(@RequestBody user user, HttpSession session)
+    public jsonpack sign(@RequestBody user user, HttpSession session)
     {
         try
         {
